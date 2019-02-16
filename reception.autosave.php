@@ -37,7 +37,7 @@ function upload($index,$destination,$maxsize=FALSE,$extensions=FALSE)
     $html = file_get_contents($nom_html);
     $nouveau_html = $html;
     for($i=0;$i<count($liens);$i++){
-      $nouveau_html = str_replace( "LIEN".$liens[$i]['0'], $liens[$i]['1'], $nouveau_html);
+      $nouveau_html = str_replace( $liens[$i]['0'], $liens[$i]['1'], $nouveau_html);
     }
     $fp = fopen($nom_html, 'w+');
     fwrite($fp,$nouveau_html);
